@@ -14,10 +14,12 @@ RUN pip install -r requirements.txt
 
 # COPY --from=build /app/ /app/
 
-# RUN python -c "import nltk; nltk.download('omw-1.4'); nltk.download('wordnet')"
+FROM sainathvelaga/bestpractices:1.0
+
+RUN python -c "import nltk; nltk.download('omw-1.4'); nltk.download('wordnet')"
 
 
 
-# EXPOSE 5000
+EXPOSE 5000
 
-# CMD ["flask", "run", "--host=0.0.0.0", "--port=5000"]
+CMD ["flask", "run", "--host=0.0.0.0", "--port=5000"]
