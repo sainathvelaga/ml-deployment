@@ -12,7 +12,7 @@ RUN pip install -r requirements.txt
 #stage-2
 FROM python:3.8-slim
 
-COPY --from=build /app/requirements/ /app/
+COPY --from=build /app/requirements.txt/ /app/
 
 RUN python -c "import nltk; nltk.download('omw-1.4'); nltk.download('wordnet')"
 
