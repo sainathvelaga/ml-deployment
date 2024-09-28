@@ -2,6 +2,8 @@
 
 FROM python:3.8-slim as build
 
+WORKDIR /app/
+
 COPY requirements.txt /app/
 
 RUN pip install --no-cache-dir --target=/app/requirements -r requirements.txt
