@@ -16,7 +16,7 @@ WORKDIR /app/
 
 COPY --from=build /app/requirements /usr/local/lib/python3.8/site-packages/
 
-COPY . /app
+
 
 EXPOSE 5000
 
