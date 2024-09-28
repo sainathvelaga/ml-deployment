@@ -24,6 +24,6 @@ EXPOSE 5000
 
 RUN python -c "import nltk; nltk.download('omw-1.4'); nltk.download('wordnet')"
 
-
+COPY . .
 
 CMD ["flask", "run", "--host=0.0.0.0", "--port=5000"]
