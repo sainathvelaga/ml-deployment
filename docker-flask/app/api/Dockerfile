@@ -1,18 +1,18 @@
 #stage-1
 
-FROM python:3.8-slim AS build
+FROM python:3-alpine3.8 AS build
 
-WORKDIR /app/
+WORKDIR /app
 
-COPY requirements.txt /app/
+COPY . /app
 
 RUN pip install --target=/app/requirements/ -r requirements.txt
 
 
 # #stage-2
-FROM python:3.8-slim
+FROM python:3-alpine3.8
 
-WORKDIR /app/
+WORKDIR /app
 
 COPY --from=build /app/requirements/ /app/
 
