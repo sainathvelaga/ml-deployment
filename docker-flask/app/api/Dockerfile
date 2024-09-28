@@ -6,7 +6,7 @@ WORKDIR /app/
 
 COPY requirements.txt /app/
 
-RUN pip install --no-cache-dir --target=/app/requirements -r requirements.txt
+RUN pip install -r requirements.txt
 
 
 #stage-2
