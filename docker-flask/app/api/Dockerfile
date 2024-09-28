@@ -1,6 +1,6 @@
 #stage-1
 
-FROM python:3.8-slim as build
+FROM python:3.8-slim AS build
 
 WORKDIR /app/
 
