@@ -6,7 +6,7 @@ WORKDIR /app
 
 COPY . /app
 
-RUN pip install --target=/app/requirements/ -r requirements.txt
+RUN pip install -r requirements.txt
 
 
 # #stage-2
@@ -14,7 +14,7 @@ FROM python:3-alpine3.8
 
 WORKDIR /app
 
-COPY --from=build /app/requirements/ /app/
+COPY --from=build /app/ .
 
 
 
