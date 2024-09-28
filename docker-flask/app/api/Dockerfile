@@ -1,12 +1,20 @@
+#stage-1
+
+FROM python:3.8-slim as build
+
+COPY requirements.txt /app/
+
+RUN pip install --no-cache-dir --target=/app/requirements -r requirements.txt
+
+
+#stage-2
 FROM python:3.8-slim
 
-COPY requirements.txt .
-
-RUN pip install -r requirements.txt
+COPY --from=build /app/requirements/ /app/
 
 RUN python -c "import nltk; nltk.download('omw-1.4'); nltk.download('wordnet')"
 
-COPY . .
+
 
 EXPOSE 5000
 
