@@ -22,6 +22,8 @@ EXPOSE 5000
 
 # FROM sainathvelaga/bestpractices:1.0
 
+RUN echo $PATH
+
 RUN python -c "import nltk; nltk.download('omw-1.4'); nltk.download('wordnet')"
 
 
